@@ -1,3 +1,4 @@
+//neste ambiente apenas faço a inicialização dos endpoints
 import express, { Application, Router, json } from 'express'
 
 const app: Application = express()
@@ -8,3 +9,4 @@ const useRouter: Router = Router()
 app.use('/users', useRouter)
 
 export default app
+
