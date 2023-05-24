@@ -1,5 +1,8 @@
-import { IuseResponse } from "../interfaces/createUser.interface";
+import { AppError } from "../errors";
+import { IuserResponse } from "../interfaces/createUser.interface";
 
-const createUser = async (): Promise<IuseResponse> =>{
-    
+const createUser = async (userBody:IuserResponse): Promise<IuserResponse> =>{
+  return userBody
 }
+
+export {createUser}

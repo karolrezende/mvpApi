@@ -1,8 +1,12 @@
 //neste ambiente eu comeco a ligar o tipo de requisição com a sua funcionalidade e middlewars
-import { useRouter } from "../app";
+import { Router } from "express";
+import { createUserController } from "../controllers/user.controllers";
+import { ensureBody } from "../middlewares/ensureBody.middleware";
+import { userSchemaRequest } from "../schemas/user.schema";
 
+export const useRouter: Router = Router()
 
-useRouter.post('', ) //cadastrar um novo usuário
+useRouter.post('', ensureBody(userSchemaRequest),createUserController) //cadastrar um novo usuário
 useRouter.post('', ) //logar com usuário na aplicação retornando um token
 useRouter.get('', ) //listar todos os usuários na aplicação
 useRouter.get('/profile', ) //listar um usuário que está cadastrado na aplicação
