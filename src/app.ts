@@ -2,14 +2,14 @@
 import 'express-async-errors'
 import express, { Application, Router, json } from 'express'
 import { handleErrors } from './errors'
-import { useRouter } from './routers/routes'
+import { loginRouter, useRouter } from './routers/routes'
 const app: Application = express()
 app.use(json())
 
 
 
 app.use('/users', useRouter)
-app.use('/login', useRouter)
+app.use('/login', loginRouter)
 
 app.use(handleErrors)
 

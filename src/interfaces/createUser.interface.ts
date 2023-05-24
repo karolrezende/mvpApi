@@ -5,4 +5,12 @@ import {z} from 'zod'
 type IuserRequest = z.infer<typeof userSchemaRequest>
 type IuserResponse = z.infer<typeof userSchemaResponse>
 
-export {IuserRequest, IuserResponse}
+interface iUser {
+    id: number,
+    name: string,
+    email: string,
+    password: string,
+    admin: boolean,
+    active: boolean
+}
+export {IuserRequest, IuserResponse, iUser}

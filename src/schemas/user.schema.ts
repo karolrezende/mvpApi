@@ -4,8 +4,13 @@ const userSchemaRequest = z.object({
     email: z.string().email(),
     password: z.string(),
     admin: z.boolean().optional(),
-    active: z.boolean().optional()
 })
 
-const userSchemaResponse = userSchemaRequest.omit({password: true, active: true})
+const userSchemaResponse = z.object({
+    id: z.number(),
+    name: z.string(),
+    email: z.string().email(),
+    admin: z.boolean(),
+    active: z.boolean()
+})
 export {userSchemaRequest, userSchemaResponse}
