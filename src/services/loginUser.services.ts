@@ -35,7 +35,7 @@ export const loginUser = async(userBody: IuserLogin): Promise<IuserToken> => {
         email: queryResult.rows[0].email
     }, process.env.SECRET_KEY!, {
         expiresIn: process.env.EXPIRES_IN,
-        subject: queryResult.rows[0].id.toString()
+        subject: queryResult.rows[0].admin.toString()
     })
 
     return {token}
