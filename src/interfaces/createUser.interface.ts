@@ -1,5 +1,5 @@
 import { infer } from "zod"
-import { userSchemaRequest, userSchemaResponse } from "../schemas/user.schema"
+import { userSchemaPatch, userSchemaRequest, userSchemaResponse } from "../schemas/user.schema"
 import {z} from 'zod'
 
 type IuserRequest = z.infer<typeof userSchemaRequest>
@@ -13,4 +13,5 @@ interface iUser {
     admin: boolean,
     active: boolean
 }
-export {IuserRequest, IuserResponse, iUser}
+type IuserPatch = z.infer<typeof userSchemaPatch>
+export {IuserRequest, IuserResponse, iUser, IuserPatch}
