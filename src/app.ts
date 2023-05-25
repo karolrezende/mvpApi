@@ -6,8 +6,6 @@ import { loginRouter, useRouter } from './routers/routes'
 const app: Application = express()
 app.use(json())
 
-
-
 app.use('/users', useRouter)
 app.use('/login', loginRouter)
 

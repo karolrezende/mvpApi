@@ -16,7 +16,8 @@ const userSchemaResponse = z.object({
 
 const userSchemaPatch = z.object({
     name: z.string().optional(),
-    email: z.string().optional(),
-    password: z.string().optional()
+    email: z.string().email().optional(),
+    admin: z.boolean().optional(),
+    active: z.boolean().optional(),
 })
 export {userSchemaRequest, userSchemaResponse, userSchemaPatch}

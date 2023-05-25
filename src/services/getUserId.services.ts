@@ -4,7 +4,7 @@ import { client } from "../database"
 
 export const getUserId = async (email: string): Promise<iUser> => {
     const queryString:string = `
-        SELECT id, name, email, admin
+        SELECT id, name, email, admin, active
         FROM 
             users
         WHERE email = $1;

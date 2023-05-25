@@ -4,7 +4,7 @@ import { client } from "../database";
 
 export const getUser = async (): Promise<Array<iUser>> =>{
     const queryString: string = `
-        SELECT id, name, email
+        SELECT id, name, email, admin, active
         FROM users;
     `
     const queryResult: QueryResult<iUser>= await client.query(queryString)
