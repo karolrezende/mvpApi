@@ -32,7 +32,7 @@ export const loginUser = async(userBody: IuserLogin): Promise<IuserToken> => {
     }
 
     const token: string = jwt.sign({
-        email: queryResult.rows[0].email
+        email: queryResult.rows[0].email.toString()
     }, process.env.SECRET_KEY!, {
         expiresIn: process.env.EXPIRES_IN,
         subject: queryResult.rows[0].admin.toString()

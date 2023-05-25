@@ -1,13 +1,8 @@
 import { QueryResult } from "pg";
 import { iUser } from "../interfaces/createUser.interface";
 import { client } from "../database";
-import { AppError } from "../errors";
 
-export const getUser = async (isAdm: string): Promise<Array<iUser>> =>{
-    if(isAdm === "false"){
-        throw new AppError("Insufficient Permission", 403)
-    }
-
+export const getUser = async (): Promise<Array<iUser>> =>{
     const queryString: string = `
         SELECT id, name, email
         FROM users;
